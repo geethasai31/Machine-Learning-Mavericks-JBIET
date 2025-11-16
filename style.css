@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #020617; 
+    color: #e2e8f0;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #00eaff;
+    border-radius: 10px;
+}
+
+/* -------------------- NAVBAR -------------------- */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2000;
+    background: rgba(2, 6, 23, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #00eaff33;
+}
+
+.navbar {
+    width: 90%;
+    margin: auto;
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    filter: drop-shadow(0 0 10px #00eaff);
+    border-radius: 50%;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+/* -------------------- HERO SECTION -------------------- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 90px;
+
+    background: url('bg.jpg') no-repeat center/cover, #020617;
+    position: relative;
+}
+
+/* Dark gradient overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(2,6,23,0.4), rgba(2,6,23,0.9));
+}
+
+/* Glowing animated lines */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('neon-lines.png') repeat;
+    opacity: 0.08;
+    animation: moveLines 12s linear infinite;
+}
+
+@keyframes moveLines {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-100%); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    font-weight: 800;
+    color: white;
+}
+
+.hero-content span {
+    color: #00eaff !important;
+    text-shadow: 0 0 20px #00eaff;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin: 15px 0 25px;
+    color: #cbd5e1;
+}
+
+/* ✔ UPDATED: Button moved slightly down */
+.btn {
+    padding: 14px 30px;
+    background: #00eaff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+    box-shadow: 0 0 15px #00eaff;
+    transition: 0.3s;
+    margin-top: 25px;
+}
+
+.btn:hover {
+    background: #00bcd4;
+    box-shadow: 0 0 25px #00eaff, 0 0 40px #00eaff;
+}
+
+/* -------------------- SECTION BOXES (glassmorphism) -------------------- */
+.section {
+    width: 85%;
+    margin: 100px auto;
+    padding: 50px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid #00eaff22;
+    box-shadow: 0 0 30px #00eaff10;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 34px;
+    margin-bottom: 18px;
+    color: #00eaff;
+    text-shadow: 0 0 15px #00eaff;
+}
+
+/* -------------------- GALLERY -------------------- */
+.gallery-container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 2px solid #00eaff33;
+    transition: 0.4s;
+    filter: brightness(0.85);
+}
+
+.gallery-container img:hover {
+    transform: scale(1.06);
+    filter: brightness(1);
+    border-color: #00eaff;
+    box-shadow: 0 0 25px #00eaff;
+}
+
+/* -------------------- TEAM -------------------- */
+#team h3 {
+    color: #00eaff;
+    margin-top: 25px;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+#team h4 {
+    margin-top: 18px;
+    color: #7ee9ff;
+}
+
+#team li {
+    font-size: 18px;
+    margin: 6px 0;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    background: rgba(2, 6, 23, 0.7);
+    padding: 22px 0;
+    text-align: center;
+    font-size: 15px;
+    border-top: 1px solid #00eaff33;
+    margin-top: 60px;
+}
+
+/* -------------------- FLOATING HOD MESSAGE -------------------- */
+.hod-floating {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 280px;
+    padding: 20px;
+    background: rgba(0, 234, 255, 0.12);
+    border: 1px solid #00eaff55;
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px #00eaff55;
+    color: #e2e8f0;
+    z-index: 3000;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+.hod-floating h3 {
+    color: #00eaff;
+    margin-bottom: 8px;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+.hod-floating span {
+    display: block;
+    margin-top: 8px;
+    color: #7ee9ff;
+    font-size: 14px;
+}
+
+/* -------------------- ANIMATIONS -------------------- */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+.slide-in {
+    opacity: 0;
+    animation: slideIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media(max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .hero-content h2 {
+        font-size: 32px;
+    }
+    .section {
+        width: 92%;
+    }
+}
